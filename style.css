@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Red Hat Display", sans-serif;
+  line-height: 1.5;
+}
+
+:root {
+  /* ### Primary */
+
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --bright-blue--hover: hsl(245, 75%, 70%);
+
+  /* ### Neutral */
+
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: var(--pale-blue);
+}
+
+.card {
+  background-color: #fff;
+  text-align: center;
+  width: 90%;
+  margin-inline: auto;
+  border-radius: 15px;
+  overflow: hidden;
+  z-index: 2;
+  max-width: 480px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+.card__data {
+  padding: 20px;
+  padding-block: 30px;
+}
+
+.card__desc {
+  margin-block: 15px;
+  color: var(--desaturated-blue);
+  margin-bottom: 25px;
+  width: 90%;
+  margin-inline: auto;
+}
+
+.card__price {
+  display: flex;
+  align-items: center;
+  background-color: var(--very-pale-blue);
+  padding: 15px;
+  border-radius: 10px;
+  gap: 1rem;
+}
+
+.card__plan {
+  margin-left: auto;
+  font-weight: 500;
+  color: var(--dark-blue);
+  cursor: pointer;
+  text-decoration: underline;
+  transition: all .1s;
+}
+
+.card__plan:hover {
+    color: var(--bright-blue--hover);
+    text-decoration: none;
+}
+
+.plan__choice {
+  font-weight: bold;
+}
+
+.price {
+  color: var(--desaturated-blue);
+  font-weight: 500;
+}
+
+.btn {
+  border: none;
+  background-color: var(--bright-blue);
+  color: white;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  padding-block: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.4);
+  margin-block: 25px;
+  transition: all .2s;
+}
+
+.btn:hover {
+    background-color: var(--bright-blue--hover);
+}
+
+.card__cancel {
+  color: var(--desaturated-blue);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.card__cancel:hover {
+    color: var(--dark-blue);
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////// */
+
+.pattern__desktop {
+  display: none;
+  width: 100%;
+}
+
+.pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 425px) {
+  .pattern__desktop {
+    display: block;
+  }
+
+  .pattern__mobile {
+    display: none;
+  }
+
+  .card__data {
+    padding: 50px;
+    padding-block: 40px;
+  }
+
+  h1 {
+  font-size: 32px;
+}
+.card__price {
+    margin-bottom: 8px;
+    padding: 25px;
+}
+
+.card__desc {
+    font-size: 18px;
+}
+}
